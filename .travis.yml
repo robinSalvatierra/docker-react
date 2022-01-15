@@ -1,0 +1,23 @@
+
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t robinsalvatierra/docker-react -f Dockerfile.dev .
+  
+script:
+  - docker run -e CI=true robinsalvatierra/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"    
+  region: "us-west-2"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-us-west-2-436334650082"
+  bucket_path: "docker"
+  on:
+    branch: main
