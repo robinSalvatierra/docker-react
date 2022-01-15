@@ -20,5 +20,3 @@ deploy:
   bucket_path: "docker"
   on:
     branch: main
-
-#coment
