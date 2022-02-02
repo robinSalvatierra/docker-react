@@ -10,7 +10,7 @@ function App() {
           <code>src/App.js</code> and save to reload.
         </p>
 
-	<h1>WQUE MACHOOOOOOOO!!! en vivo</h1>
+	<h1>CHange on the feature branch</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
